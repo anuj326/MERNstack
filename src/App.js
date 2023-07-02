@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Login from './components/Login'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Register from './components/Register';
+import Home from './components/Home';
+import Subjects from './components/Subjects';
+import ScientificMethod from './components/Physics/ScientificMethod';
+import ScientificMeasurement from './components/Physics/ScientificMeasurement'
+import MathToolsforPhysics from './components/Physics/MathToolsforPhysics'
+import ResolvingVector from './components/Physics/ResolvingVectors'
+import About from './components/About';
 
-function App() {
+
+
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <BrowserRouter >
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='login' element={<Login />} />
+        <Route path='register' element={<Register />} />
+        <Route path='subject' element={<Subjects />}/>
+        <Route path='physics/scientificmethod' element={<ScientificMethod/>}/>
+        <Route path='physics/scientificmeasurement' element={<ScientificMeasurement />} />
+        <Route path='physics/mathtoolsforphysics' element={<MathToolsforPhysics />} />
+        <Route path='physics/resolvingvectors' element={<ResolvingVector />} />
+        <Route path='about' element={<About />}/>
+        
+       
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
